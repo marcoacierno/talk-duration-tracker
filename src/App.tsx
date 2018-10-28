@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { useState } from 'react';
 
-import Timer from './Timer';
 import styled from 'styled-components';
+
+import Timer from './Timer';
 import PreTimerBottomBar from './PreTimerBottomBar';
 import RunningTimerBottomBar from './RunningTimerBottomBar';
 
