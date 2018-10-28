@@ -9,17 +9,31 @@ type Props = {
   className?: string;
 };
 
+function getTime(date: Date) {
+  const hours = date.getHours() - 1;
+  const minutes = date.getMinutes();
+  const seconds = date.getSeconds();
+  const milliseconds = parseInt(
+    date
+      .getMilliseconds()
+      .toString()
+      .slice(0, 2),
+    10
+  );
+
+  let output = '';
+
+  if (hours > 0) {
+    output = `${pad(hours)}:`;
+  }
+
+  output += `${pad(minutes)}:${pad(seconds)}:${pad(milliseconds)}`;
+  return output;
+}
+
 const Timer: React.SFC<Props> = props => {
   const date = new Date(props.time);
-  const time = `${pad(date.getMinutes())}:${pad(date.getSeconds())}:${pad(
-    parseInt(
-      date
-        .getMilliseconds()
-        .toString()
-        .slice(0, 2),
-      10
-    )
-  )}`;
+  const time = getTime(date);
 
   return (
     <div className={props.className}>
