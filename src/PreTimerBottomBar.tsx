@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { useState } from 'react';
-import StyledButton from './Button';
 import styled from 'styled-components';
+
+import StyledButton from './Button';
 
 type Props = {
   onStart: (mins: number) => void;
