@@ -8,7 +8,7 @@ import RunningTimerBottomBar from './RunningTimerBottomBar';
 
 type Interval = {
   start: number;
-  end: number;
+  end: number | null;
 };
 
 function calculateElapsedTime(intervals: Interval[]) {
